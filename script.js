@@ -81,3 +81,108 @@ Car.prototype.brake = function () {
 
 bmw.accelerate();
 mercedez.brake();
+
+
+// class declaration
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2037 - this.birthYear);
+  }
+
+  greet(){
+    console.log(`hey ${this.fullName}`)
+  }
+
+
+  get age(){
+    return 2037 - this.birthYear
+  }
+
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name
+    else alert(`${name} is not a fullname`)
+  }
+
+  get fullName(){
+    return this._fullName
+  }
+}
+
+
+
+const Jessica = new PersonCl('Jessica Davis', 1996);
+console.log(Jessica);
+Jessica.calcAge(); 
+console.log(Jessica.age)
+console.log(Jessica.__proto__ === PersonCl.prototype)
+
+// PersonCl.prototype.greet = function() {
+//   console.log(`hey ${this.firstName}`)
+// }
+
+console.log(Jessica.fullName)
+
+Jessica.greet()
+
+
+
+const walter = new PersonCl('Walter Blue', 1965)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const account = {
+  owner: 'Jonas',
+  movements: [200, 100, 10, 190, 230],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+    set latest(mov) {
+    return this.movements.push(mov)
+  }
+
+}
+
+
+console.log(account.latest);
+
+
+account.latest = 50;
+
+
+console.log(account.movements)
